@@ -1,0 +1,47 @@
+body
+{ 
+  padding: 0;
+  margin: 0;
+}
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#name {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  font-size: 50px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: bold;
+  color: black;
+  -webkit-text-stroke: 2px red;
+  opacity: 0;
+  animation: fadeInScale 2s ease-out forwards, heartbeat 1.5s ease-in-out infinite 2.2s;
+}
+
+/* دخلة تدريجية */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* نبض */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
